@@ -1,7 +1,10 @@
 def compare_version(version_1,version_2):
-	if(type(version_1) is not str or type(version_2) is not str):
+	try:
+		if(type(version_1) is not str or type(version_2) is not str):
+			return
+	except (TypeError):
 		print("Type Error: input value is not a string")
-		return
+
 	try:
 		version_1 = list(map(int, version_1.split('.')))
 		version_2 = list(map(int, version_2.split('.')))
@@ -39,23 +42,5 @@ def compare_version(version_1,version_2):
 			if(version_2[j]) > 0:
 				result = "-1"
 	print(result)
-	
-	
-# same length, v1 < v2 
-compare_version('1.2.3', '1.2.4')
 
-# same length, v1 < v2, with space
-compare_version('1.2.0.3  ', '  1.2.1.3')
-
-# same length, v1 > v2 
-compare_version('1.2.4', '1.2.3')
-
-# same length, v1 > v2, with space
-compare_version('1.2.1.3  ', '  1.2.0.3')
-
-# same length, v1 = v2 
-compare_version('1.2.3', '1.2.3')
-
-# same length, v1 = v2, with space
-compare_version('1.2.3  ', '  1.2.3')
 
