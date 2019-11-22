@@ -6,7 +6,6 @@ class Test_compare_version(unittest.TestCase):
 	def test_non_string_input(self):
 		with self.assertRaises(TypeError):
 			compare('1.2', 1.2)
-
 	def test_non_digit_input(self):
 		with self.assertRaises(ValueError):
 			compare('1.2.3', '1.2.#')

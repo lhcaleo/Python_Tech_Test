@@ -1,16 +1,12 @@
 def compare(version_1,version_2):
-	try:
-		if(type(version_1) is not str or type(version_2) is not str):
-			return
-	except (TypeError):
-		print("Type Error: input value is not a string")
+	if(type(version_1) is not str or type(version_2) is not str):
+		raise TypeError("Type Error: input value is not a string")
 
 	try:
 		version_1 = list(map(int, version_1.split('.')))
 		version_2 = list(map(int, version_2.split('.')))
 	except (ValueError):
-		print("Value Error: input contains non-digit items")
-		return
+		raise ValueError("Value Error: input contains non-digit items")
 
 	result = 0
 	# if version 1 is longer than version 2
