@@ -1,4 +1,6 @@
-def check_overlap(x1,x2,x3,x4):
+def check(x1,x2,x3,x4):
+	if(type(x1) is not int or type(x2) is not int or type(x3) is not int or type(x4) is not int):
+		raise TypeError("Type Error: input value is not an integer")
 
 	if(x1 == x2 or x3 == x4):
 		print("Invalid input: one or more point is given instead of line")
@@ -20,8 +22,6 @@ def check_overlap(x1,x2,x3,x4):
 			return True
 	else:
 		return True
-
-#print(check_overlap(1,2,2,3))
 
 
 
