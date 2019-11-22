@@ -1,7 +1,7 @@
 import unittest
 from check_overlap import check
 
-class test_check_overlap_test(unittest.TestCase):
+class test_check_overlap(unittest.TestCase):
 
 	def test_point_as_input(self):
 		self.assertFalse(check(1, 1, 2, 3))
